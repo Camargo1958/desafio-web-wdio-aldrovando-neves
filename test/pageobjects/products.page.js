@@ -81,12 +81,48 @@ class ProductsPage extends Page {
         return await this.inventoryItemName.getText();
     }
 
+    set inventoryItemDescription(index) {
+        this.inventoryItemDescriptionSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div/div`);
+    }
+
+    get inventoryItemDescription() {
+        return this.inventoryItemDescriptionSearch;
+    }
+
+    async isInventoryItemDescriptionDisplayed(index) {
+        this.inventoryItemDescription = index;
+        return await this.inventoryItemDescription.isDisplayed();
+    }
+
+    async getInventoryItemDescriptionText(index) {
+        this.inventoryItemDescription = index;
+        return await this.inventoryItemDescription.getText();
+    }
+
+    set inventoryItemImage(index) {
+        this.inventoryItemImageSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[1]/a/img`);
+    }
+
+    get inventoryItemImage() {
+        return this.inventoryItemImageSearch;
+    }
+
+    async isInventoryItemImageDisplayed(index) {
+        this.inventoryItemImage = index;
+        return await this.inventoryItemImage.isDisplayed();
+    }
+
     set inventoryItemPrice(index) {
         this.inventoryItemPriceSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div[2]/div`);
     }
 
     get inventoryItemPrice() {
         return this.inventoryItemPriceSearch;
+    }
+
+    async isInventoryItemPriceDisplayed(index) {
+        this.inventoryItemPrice = index;
+        return await this.inventoryItemPrice.isDisplayed();
     }
 
     async getInventoryItemPriceText(index) {

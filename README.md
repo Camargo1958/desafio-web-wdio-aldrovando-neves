@@ -23,6 +23,9 @@ Roteiro seguido:
 - Configuração da esteira de execução com Github Actions
 - Separação de configurações de execução local e remota (headless)
 - Separação de jobs (buold, test) para execução com Github Actions
+- Configuração de credenciais em arquivo login.data
 
 Autor: Aldrovando Camargo Neves
 E-mail: aldrovando.neves@inmetrics.com
+
+Versão do NodeJS usada nos testes: 20.18.1
