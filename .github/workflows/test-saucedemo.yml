@@ -35,6 +35,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.5.1'
-          
+
+      - name: Install Dependencies
+        run: npm install
+
       - name: Run WebdriverIO Tests
         run: npx wdio run ./configs/remote/wdio.chrome.remote.conf.js
