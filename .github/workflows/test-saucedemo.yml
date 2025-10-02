@@ -25,4 +25,4 @@ jobs:
         run: npm install
 
       - name: Run WebdriverIO Tests
-        run: npx wdio run wdio.conf.js
+        run: npx wdio run ./configs/local/wdio.chrome.remote.conf.js

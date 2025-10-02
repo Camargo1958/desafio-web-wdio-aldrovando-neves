@@ -9,10 +9,10 @@
     "@wdio/spec-reporter": "^9.20.0"
   },
   "scripts": {
-    "all-tests": "wdio run ./wdio.conf.js",
+    "all-tests": "wdio run ./configs/local/wdio.chrome.local.conf.js",
     "allure-report": "allure generate -c allure-results && allure open",
-    "login-tests": "wdio run ./wdio.conf.js --suite login",
-    "add-to-cart-tests": "wdio run ./wdio.conf.js --suite addToCart"
+    "login-tests": "wdio run ./configs/local/wdio.chrome.local.conf.js --suite login",
+    "add-to-cart-tests": "wdio run ./configs/local/wdio.chrome.local.conf.js --suite addToCart"
   },
   "dependencies": {
     "allure-commandline": "^2.34.1"

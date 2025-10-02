@@ -21,3 +21,4 @@ Roteiro seguido:
 - Criação dos testes de Adicionar item ao carrinho
 - Configuração ds suítes de teste
 - Configuração da esteira de execução com Github Actions
+- Separação de configurações de execução local e remota (headless)

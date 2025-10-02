@@ -21,14 +21,14 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        '../../test/specs/**/*.js'
     ],
     suites: {
         login: [
-            './test/specs/loginTest.e2e.js'
+            '../../test/specs/loginTest.e2e.js'
         ],
         addToCart: [
-            './test/specs/addToCartTest.e2e.js'
+            '../../test/specs/addToCartTest.e2e.js'
         ]
     },
     // Patterns to exclude.
@@ -58,7 +58,10 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: ['--headless', '--disable-gpu']
+        }
     }],
 
     //
