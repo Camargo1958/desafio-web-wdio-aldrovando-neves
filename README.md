@@ -20,3 +20,4 @@ Roteiro seguido:
 - Configuração para screenshots de cada teste
 - Criação dos testes de Adicionar item ao carrinho
 - Configuração ds suítes de teste
+- Configuração da esteira de execução com Github Actions

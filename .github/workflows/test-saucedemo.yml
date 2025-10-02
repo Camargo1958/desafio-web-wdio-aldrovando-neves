@@ -1,0 +1,28 @@
+name: Saucedemo Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.5.1'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run WebdriverIO Tests
+        run: npx wdio run wdio.conf.js
