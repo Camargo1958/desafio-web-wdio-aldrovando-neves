@@ -9,8 +9,10 @@
     "@wdio/spec-reporter": "^9.20.0"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js",
-    "allure-report": "allure generate -c allure-results && allure open"
+    "all-tests": "wdio run ./wdio.conf.js",
+    "allure-report": "allure generate -c allure-results && allure open",
+    "login-tests": "wdio run ./wdio.conf.js --suite login",
+    "add-to-cart-tests": "wdio run ./wdio.conf.js --suite addToCart"
   },
   "dependencies": {
     "allure-commandline": "^2.34.1"

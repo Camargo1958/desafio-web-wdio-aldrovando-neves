@@ -18,4 +18,5 @@ Roteiro seguido:
 - Criação dos testes de Login
 - Instalação e configuração do Allure reporter
 - Configuração para screenshots de cada teste
-- Criaçao dos testes de Adicionar item ao carrinho
+- Criação dos testes de Adicionar item ao carrinho
+- Configuração ds suítes de teste

@@ -23,6 +23,14 @@ export const config = {
     specs: [
         './test/specs/**/*.js'
     ],
+    suites: {
+        login: [
+            './test/specs/loginTest.e2e.js'
+        ],
+        addToCart: [
+            './test/specs/addToCartTest.e2e.js'
+        ]
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
