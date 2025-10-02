@@ -1,11 +1,12 @@
 import { expect } from '@wdio/globals'
 import LoginPage from '../pageobjects/login.page.js'
 import ProductsPage from '../pageobjects/products.page.js'
+import { loginData } from '../../data/login.data.js'
 
 describe('Testes de Adição de item ao carrinho', () => {
     beforeEach(async () => {
         await LoginPage.open()
-        await LoginPage.login('standard_user', 'secret_sauce')
+        await LoginPage.login(loginData.user, loginData.password)
     })
 
     afterEach(async () => {
