@@ -6,7 +6,7 @@ import Page from './page.js';
  */
 class LoginPage extends Page {
     /**
-     * define o mapeaento dos elementos da página
+     * define o mapeaento e métodos de interação dos elementos da página
      */
     get inputUsername () {
         return $('#user-name');

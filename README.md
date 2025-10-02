@@ -12,6 +12,10 @@ Roteiro seguido:
 - Clone do repositório na máquina local
 - Inicialização do WebdriverIO
 - Criação dos pageobjects
+  - Página base
+  - Página de Login
+  - Pagina de Produtos
 - Criação dos testes de Login
 - Instalação e configuração do Allure reporter
 - Configuração para screenshots de cada teste
+- Criaçao dos testes de Adicionar item ao carrinho

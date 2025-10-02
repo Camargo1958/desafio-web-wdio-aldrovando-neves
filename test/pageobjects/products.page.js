@@ -6,8 +6,38 @@ import Page from './page.js';
  */
 class ProductsPage extends Page {
     /**
-     * define o mapeaento dos elementos da página
+     * define o mapeaento e métodos de interação dos elementos da página
      */
+    get burgerMenu () {
+        return $('#react-burger-menu-btn');
+    }
+
+    async clickBurgerMenu() {
+        await this.burgerMenu.click();
+    }
+
+    get resetAppStateLink () {
+        return $('#reset_sidebar_link');
+    }
+
+    async clickResetAppStateLink() {
+        await this.resetAppStateLink.click();
+    }
+
+    get logOutLink () {
+        return $('#logout_sidebar_link');
+    }
+
+    async clickLogOutLink() {
+        await this.logOutLink.click();
+    }
+
+    async logOut() {
+        await this.clickBurgerMenu();
+        await this.clickResetAppStateLink();
+        await this.clickLogOutLink();
+    }
+
     get pageTitle () {
         return $('span[data-test="title"]');
     }
@@ -19,6 +49,99 @@ class ProductsPage extends Page {
     async getPageTitleText() {
         return await this.pageTitle.getText();
     }
+
+    set inventoryItem(index) {
+        this.inventoryItemSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]`);
+    }
+
+    get inventoryItem() {
+        return this.inventoryItemSearch;
+    }
+
+    async isInventoryItemDisplayed(index) {
+        this.inventoryItem = index;
+        return await this.inventoryItem.isDisplayed();
+    }
+
+    set inventoryItemName(index) {
+        this.inventoryItemNameSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div/a`);
+    }
+
+    get inventoryItemName() {
+        return this.inventoryItemNameSearch;
+    }
+
+    async isInventoryItemNameDisplayed(index) {
+        this.inventoryItemName = index;
+        return await this.inventoryItemName.isDisplayed();
+    }
+
+    async getInventoryItemNameText(index) {
+        this.inventoryItemName = index;
+        return await this.inventoryItemName.getText();
+    }
+
+    set inventoryItemPrice(index) {
+        this.inventoryItemPriceSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div[2]/div`);
+    }
+
+    get inventoryItemPrice() {
+        return this.inventoryItemPriceSearch;
+    }
+
+    async getInventoryItemPriceText(index) {
+        this.inventoryItemPrice = index;
+        return await this.inventoryItemPrice.getText();
+    }
+
+    set inventoryItemAddToCartButton(index) {
+        this.inventoryAddItemButtonSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div[2]/button[contains(text(), "Add to cart")]`);
+    }
+
+    get inventoryItemAddToCartButton() {
+        return this.inventoryAddItemButtonSearch;
+    }
+
+    async clickInventoryItemAddToCartButton(index) {
+        this.inventoryItemAddToCartButton = index;
+        await this.inventoryItemAddToCartButton.click();
+    }
+
+    async isClickableInventoryItemAddToCartButton(index) {
+        this.inventoryItemAddToCartButton = index;
+        return await this.inventoryItemAddToCartButton.isClickable();
+    }
+
+    get shoppingCartBadge() {
+        return $('span[class="shopping_cart_badge"]');
+    }
+
+    async isShoppingCartBadgeDisplayed() {
+        return await this.shoppingCartBadge.isDisplayed();
+    }
+
+    async getShoppingCartBadgeText() {
+        return await this.shoppingCartBadge.getText();
+    }
+
+    set inventoryItemRemoveFromCartButton(index) {
+        this.inventoryItemRemoveButtonSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div[2]/button[contains(text(), "Remove")]`);
+    }
+
+    get inventoryItemRemoveFromCartButton() {
+        return this.inventoryItemRemoveButtonSearch;
+    }
+
+    async isClickableInventoryItemRemoveFromCartButton(index) {
+        this.inventoryItemRemoveFromCartButton = index;
+        return await this.inventoryItemRemoveFromCartButton.isClickable();
+    }
+
+    async clickInventoryItemRemoveFromCartButton(index) {
+        this.inventoryItemRemoveFromCartButton = index;
+        await this.inventoryItemRemoveFromCartButton.click();
+    }
+
 }
 
 export default new ProductsPage();
