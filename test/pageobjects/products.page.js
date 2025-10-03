@@ -51,7 +51,7 @@ class ProductsPage extends Page {
     }
 
     set inventoryItem(index) {
-        this.inventoryItemSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]`);
+        this.inventoryItemSearch = $(`//div[@id="inventory_container"]/div/div[${index}]`);
     }
 
     get inventoryItem() {
@@ -64,7 +64,7 @@ class ProductsPage extends Page {
     }
 
     set inventoryItemName(index) {
-        this.inventoryItemNameSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div/a`);
+        this.inventoryItemNameSearch = $(`//div[@id="inventory_container"]/div/div[${index}]/div[2]/div/a/div`);
     }
 
     get inventoryItemName() {
@@ -78,11 +78,13 @@ class ProductsPage extends Page {
 
     async getInventoryItemNameText(index) {
         this.inventoryItemName = index;
-        return await this.inventoryItemName.getText();
+        var name = await this.inventoryItemName.getText();
+        return name
+        //return await this.inventoryItemName.getText();
     }
 
     set inventoryItemDescription(index) {
-        this.inventoryItemDescriptionSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div/div`);
+        this.inventoryItemDescriptionSearch = $(`//div[@id="inventory_container"]/div/div[${index}]/div[2]/div/div`);
     }
 
     get inventoryItemDescription() {
@@ -100,7 +102,7 @@ class ProductsPage extends Page {
     }
 
     set inventoryItemImage(index) {
-        this.inventoryItemImageSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[1]/a/img`);
+        this.inventoryItemImageSearch = $(`//div[@id="inventory_container"]/div/div[${index}]/div[1]/a/img`);
     }
 
     get inventoryItemImage() {
@@ -113,7 +115,7 @@ class ProductsPage extends Page {
     }
 
     set inventoryItemPrice(index) {
-        this.inventoryItemPriceSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div[2]/div`);
+        this.inventoryItemPriceSearch = $(`//div[@id="inventory_container"]/div/div[${index}]/div[2]/div[2]/div`);
     }
 
     get inventoryItemPrice() {
@@ -131,7 +133,7 @@ class ProductsPage extends Page {
     }
 
     set inventoryItemAddToCartButton(index) {
-        this.inventoryAddItemButtonSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div[2]/button[contains(text(), "Add to cart")]`);
+        this.inventoryAddItemButtonSearch = $(`//div[@id="inventory_container"]/div/div[${index}]/div[2]/div[2]/button[contains(text(), "Add to cart")]`);
     }
 
     get inventoryItemAddToCartButton() {
@@ -161,7 +163,7 @@ class ProductsPage extends Page {
     }
 
     set inventoryItemRemoveFromCartButton(index) {
-        this.inventoryItemRemoveButtonSearch = $(`//div[@id="inventory_container"]/div/div["${index}"]/div[2]/div[2]/button[contains(text(), "Remove")]`);
+        this.inventoryItemRemoveButtonSearch = $(`//div[@id="inventory_container"]/div/div[${index}]/div[2]/div[2]/button[contains(text(), "Remove")]`);
     }
 
     get inventoryItemRemoveFromCartButton() {

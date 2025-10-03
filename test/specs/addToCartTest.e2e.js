@@ -40,21 +40,21 @@ describe('Testes de Adição de item ao carrinho', () => {
         await expect(await ProductsPage.getShoppingCartBadgeText()).toBe('1')
     })
 
-    // it('T06 - valida nome do segundo item da página de produtos', async () => {
-    //     await expect(await ProductsPage.isInventoryItemDisplayed(2)).toBe(true)
-    //     await expect(await ProductsPage.isInventoryItemNameDisplayed(2)).toBe(true)
-    //     await expect(await ProductsPage.getInventoryItemNameText(2)).toBe(productsData.secondItem.name)
-    // })
+    it('T06 - valida nome do segundo item da página de produtos', async () => {
+        await expect(await ProductsPage.isInventoryItemDisplayed(2)).toBe(true)
+        await expect(await ProductsPage.isInventoryItemNameDisplayed(2)).toBe(true)
+        await expect(await ProductsPage.getInventoryItemNameText(2)).toBe(productsData.secondItem.name)
+    })
 
-    // it('T07 - valida a descrição do segundo item da página de produtos', async () => {
-    //     await expect(await ProductsPage.isInventoryItemDescriptionDisplayed(2)).toBe(true)
-    //     await expect(await ProductsPage.getInventoryItemDescriptionText(2)).toBe(productsData.secondItem.description)
-    // })
+    it('T07 - valida a descrição do segundo item da página de produtos', async () => {
+        await expect(await ProductsPage.isInventoryItemDescriptionDisplayed(2)).toBe(true)
+        await expect(await ProductsPage.getInventoryItemDescriptionText(2)).toBe(productsData.secondItem.description)
+    })
 
-    // it('T08 - valida preço do segundo item da página de produtos', async () => {
-    //     await expect(await ProductsPage.isInventoryItemPriceDisplayed(2)).toBe(true)
-    //     await expect(await ProductsPage.getInventoryItemPriceText(2)).toBe(productsData.secondItem.price)
-    // })
+    it('T08 - valida preço do segundo item da página de produtos', async () => {
+        await expect(await ProductsPage.isInventoryItemPriceDisplayed(2)).toBe(true)
+        await expect(await ProductsPage.getInventoryItemPriceText(2)).toBe(productsData.secondItem.price)
+    })
 
     it('T09 - valida se a imagem do segundo item da página de produtos é apresentada', async () => {
         await expect(await ProductsPage.isInventoryItemImageDisplayed(2)).toBe(true)
