@@ -50,6 +50,14 @@ class ProductsPage extends Page {
         return await this.pageTitle.getText();
     }
 
+    get inventoryItemList() {
+        return $$('//div[@id="inventory_container"]/div/div/div[2]');
+    }
+
+    async getInventoryItemListCount() {
+        return await this.inventoryItemList.length;
+    }
+
     set inventoryItem(index) {
         this.inventoryItemSearch = $(`//div[@id="inventory_container"]/div/div[${index}]`);
     }
