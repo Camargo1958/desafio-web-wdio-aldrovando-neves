@@ -68,4 +68,8 @@ describe('Testes de Adição de item ao carrinho', () => {
         await ProductsPage.clickInventoryItemRemoveFromCartButton(2)
         await expect(await ProductsPage.isShoppingCartBadgeDisplayed()).toBe(false)
     })
+
+    it('T11 - valida a quantidade de itens na página de produtos', async () => {
+        await expect(await ProductsPage.getInventoryItemListCount()).toBe(6)
+    })
 })
