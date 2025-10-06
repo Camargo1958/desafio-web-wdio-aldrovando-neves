@@ -1,5 +1,5 @@
 # desafio-web-wdio-aldrovando-neves
-Desafio de automação de teste com WebdriverIO
+**Desafio de automação de teste com WebdriverIO**
 
 Site testado:https://www.saucedemo.com/
 
@@ -25,7 +25,21 @@ Roteiro seguido:
 - Separação de jobs (buold, test) para execução com Github Actions
 - Configuração de credenciais em arquivo login.data
 
+Versão do NodeJS usada nos testes: 20.18.1
+
+Tecnologias utilizadas:
+- WebdriverIO
+- Mocha (test framework)
+- Allure reporter
+- Github Actions
+
+Execução dos testes localmente:
+- npm run all-tests
+- npm run login-tests
+- npm run add-to-cart-tests
+
+Visualização do relatório de teste (local):
+- npm run allure-reporter
+
 Autor: Aldrovando Camargo Neves
 E-mail: aldrovando.neves@inmetrics.com
-
-Versão do NodeJS usada nos testes: 20.18.1
