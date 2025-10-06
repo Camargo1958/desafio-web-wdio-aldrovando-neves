@@ -2,7 +2,7 @@ import { $ } from '@wdio/globals'
 import Page from './page.js';
 
 /**
- * Página de Login
+ * Página de Produtos
  */
 class ProductsPage extends Page {
     /**
@@ -86,9 +86,7 @@ class ProductsPage extends Page {
 
     async getInventoryItemNameText(index) {
         this.inventoryItemName = index;
-        var name = await this.inventoryItemName.getText();
-        return name
-        //return await this.inventoryItemName.getText();
+        return await this.inventoryItemName.getText();
     }
 
     set inventoryItemDescription(index) {
@@ -170,6 +168,14 @@ class ProductsPage extends Page {
         return await this.shoppingCartBadge.getText();
     }
 
+    get shoppingCartLink() {
+        return $('a[data-test="shopping-cart-link"]');
+    }
+
+    async clickShoppingCartLink() {
+        await this.shoppingCartLink.click();
+    }
+
     set inventoryItemRemoveFromCartButton(index) {
         this.inventoryItemRemoveButtonSearch = $(`//div[@id="inventory_container"]/div/div[${index}]/div[2]/div[2]/button[contains(text(), "Remove")]`);
     }
@@ -187,7 +193,6 @@ class ProductsPage extends Page {
         this.inventoryItemRemoveFromCartButton = index;
         await this.inventoryItemRemoveFromCartButton.click();
     }
-
 }
 
 export default new ProductsPage();
